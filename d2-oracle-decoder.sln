@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "d2-oracle-decoder", "d2-oracle-decoder.csproj", "{877151F4-3B82-4756-9C56-43C0FC183BF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{877151F4-3B82-4756-9C56-43C0FC183BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877151F4-3B82-4756-9C56-43C0FC183BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877151F4-3B82-4756-9C56-43C0FC183BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877151F4-3B82-4756-9C56-43C0FC183BF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5192E71E-F5F6-473E-9E18-46B8671A9964}
+	EndGlobalSection
+EndGlobal
