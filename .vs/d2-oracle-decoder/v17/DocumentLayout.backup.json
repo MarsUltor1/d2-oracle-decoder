@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\d2-oracle-decoder\\",
+  "WorkspaceRootPath": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{877151F4-3B82-4756-9C56-43C0FC183BF8}|d2-oracle-decoder.csproj|c:\\users\\mark\\documents\\d2-oracle-decoder\\d2-oracle-decoder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{877151F4-3B82-4756-9C56-43C0FC183BF8}|d2-oracle-decoder.csproj|c:\\users\\mark\\documents\\d2-oracle-decoder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{877151F4-3B82-4756-9C56-43C0FC183BF8}|d2-oracle-decoder.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877151F4-3B82-4756-9C56-43C0FC183BF8}|d2-oracle-decoder.csproj|c:\\users\\mark\\documents\\d2-oracle-decoder\\oracle-frequencies.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{877151F4-3B82-4756-9C56-43C0FC183BF8}|d2-oracle-decoder.csproj|solutionrelative:oracle-frequencies.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,13 +24,32 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\d2-oracle-decoder\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\d2-oracle-decoder\\Program.cs",
+              "ToolTip": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAYwGEAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T15:43:21.731Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "oracle-frequencies.txt",
+              "DocumentMoniker": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\oracle-frequencies.txt",
+              "RelativeDocumentMoniker": "oracle-frequencies.txt",
+              "ToolTip": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\oracle-frequencies.txt",
+              "RelativeToolTip": "oracle-frequencies.txt",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAAABQBAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-06-18T17:48:02.678Z",
               "EditorCaption": ""
             }
           ]

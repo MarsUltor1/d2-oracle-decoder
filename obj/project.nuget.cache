@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LqGW/Xq5+DY=",
+  "dgSpecHash": "cpjxV4QYQy0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\d2-oracle-decoder\\d2-oracle-decoder.csproj",
+  "projectFilePath": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\d2-oracle-decoder.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mark\\.nuget\\packages\\fftsharp\\2.2.0\\fftsharp.2.2.0.nupkg.sha512",
     "C:\\Users\\Mark\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

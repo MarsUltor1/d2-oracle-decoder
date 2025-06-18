@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("d2-oracle-decoder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+581a265f1b27f1736b41fe906f4adb0487c69e32")]
 [assembly: System.Reflection.AssemblyProductAttribute("d2-oracle-decoder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("d2-oracle-decoder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

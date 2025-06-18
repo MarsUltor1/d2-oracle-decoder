@@ -7,6 +7,18 @@ using NAudio.CoreAudioApi;
 
 namespace d2OracleDecoder 
 {
+    enum Oracle
+    {
+        L1,
+        L2,
+        L3,
+        M,
+        R1,
+        R2,
+        R3,
+        NaO
+    }
+
     class Program
     {
         private static int sampleRate = 0;
@@ -14,18 +26,28 @@ namespace d2OracleDecoder
 
         static void Main(string[] args)
         {
-            // Record the oracles sequence
-            RecordAudio();
+            // Repeat for as many sequences as user wants
+            while (true)
+            {
+                // Record the oracles sequence
+                RecordAudio();
 
-            // Analyze recording to figure out pattern
-            Thread.Sleep(2000); // pause between recording and playback for testing purposes only
-            AnalyzeAudio();
+                // Analyze recording to figure out pattern
+                List<Oracle> oracles = AnalyzeAudio();
+
+                // Output oracle sequence to user
+                Console.WriteLine("\nSolution: ");
+                foreach (Oracle o in oracles)
+                {
+                    Console.WriteLine(o);
+                }
+            }
         }
 
         private static void RecordAudio ()
         {
             // only record when delete key is hit
-            Console.WriteLine("Press [del] (delete) to start recording.");
+            Console.WriteLine("\n\nPress [del] (delete) to start recording.");
             while (true)
             {
                 if (Console.ReadKey().Key == ConsoleKey.Delete)
@@ -70,7 +92,7 @@ namespace d2OracleDecoder
             }
         }
 
-        private static void AnalyzeAudio ()
+        private static List<Oracle> AnalyzeAudio ()
         {
             // Open audio file
             using (AudioFileReader waveFile = new AudioFileReader("oracles.wav"))
@@ -82,6 +104,7 @@ namespace d2OracleDecoder
 
                 // read in audio buffer to analyze
                 int read;
+                List<Oracle> oracles = new List<Oracle>();
                 while ((read = waveFile.Read(buffer, 0, bufferSize)) > 0)
                 {
                     // Convert bytes to float samples
@@ -103,10 +126,52 @@ namespace d2OracleDecoder
                     int peakIndex = Array.IndexOf(magnitudes, magnitudes.Max());
                     double peakFrequency = FFT.FrequencyScale(magnitudes.Length, sampleRate)[peakIndex];
 
-                    // Convert peak frequency to note
-                    Console.WriteLine($"peak frequency {peakFrequency}");
+                    // Convert peak frequency an oracle
+                    Oracle currentOracle = CheckForOracle(peakFrequency);
+                    if ( currentOracle != Oracle.NaO)
+                    {
+                        // check that the oracle has not already been added to list
+                        if (!oracles.Contains(currentOracle))
+                        {
+                            oracles.Add(currentOracle);
+                        }
+                    }
                 }
+
+                return oracles;
             }
+        }
+
+        private static Oracle CheckForOracle(double frequency)
+        {
+            // Match frequency with corosponding oracle
+            switch (frequency)
+            {
+                case 292.96875: // L1
+                    return Oracle.L1;
+
+                case 363.28125: // L2
+                    return Oracle.L2;
+
+                case 785.15625: // L3
+                    return Oracle.L3;
+
+                case 257.8125: // M
+                    return Oracle.M;
+
+                case 667.96875: // R1
+                    return Oracle.R1;
+
+                case 105.46875: // R2
+                    return Oracle.R2;
+
+                case 480.46875: // R3
+                    return Oracle.R3;
+
+                default: // If no matching frequency is found return Not an Oracle
+                    return Oracle.NaO;
+            }
+            
         }
     }
 }
