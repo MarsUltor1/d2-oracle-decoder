@@ -1,9 +1,10 @@
-﻿using System;
-using System.Numerics;
-using System.Collections.Generic;
-using NAudio.Wave;
-using FftSharp;
+﻿using FftSharp;
 using NAudio.CoreAudioApi;
+using NAudio.Wave;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Numerics;
 
 namespace d2OracleDecoder 
 {
@@ -24,6 +25,8 @@ namespace d2OracleDecoder
         private static int sampleRate = 0;
         private static int fftSize = 4096;
         private static List<Oracle> oracles = new List<Oracle>();
+        private static Oracle possibleOracle = Oracle.NaO;
+        private static double matchedFrequency = double.MinValue;
 
         static void Main(string[] args)
         {
@@ -126,12 +129,10 @@ namespace d2OracleDecoder
                     // Identify peak frequencies
                     int peakIndex = Array.IndexOf(magnitudes, magnitudes.Max());
                     double peakFrequency = FFT.FrequencyScale(magnitudes.Length, sampleRate)[peakIndex];
-                    Console.WriteLine(peakFrequency);
+                    //Console.WriteLine(peakFrequency);
 
                     // Convert peak frequency an oracle
-                    // Hold possible oracle and it's frequency until it is confirmed
-                    Oracle possibleOracle = Oracle.NaO;
-                    double matchedFrequency = double.MinValue;
+                    
 
                     // First check to match the oracle
                     if (possibleOracle == Oracle.NaO)
@@ -143,6 +144,7 @@ namespace d2OracleDecoder
                     {
                         // Check to see if two frequencies in a row match one oracle
                         Oracle oracle = CheckForOracle(peakFrequency, possibleOracle, matchedFrequency);
+                        //Oracle oracle = possibleOracle;
 
                         // check that a valid not already added oracle was found
                         if (oracle != Oracle.NaO && !oracles.Contains(oracle))
@@ -160,13 +162,13 @@ namespace d2OracleDecoder
 
         private static Oracle CheckForOracle(double frequency, Oracle possibleOracle, double matchedFrequency)
         {
-            List<double> l1Frequencies = new List<double>() { 23707.03125, 152.34375, 140.625, 304.6875, 292.96875 };
-            List<double> l2Frequencies = new List<double>() { 714.84375, 23296.875, 363.28125 };
-            List<double> l3Frequencies = new List<double>() { 773.4375, 23214.84375, 23542.96875, 445.3125, 433.59375, 785.15625 };
-            List<double> mFrequencies = new List<double>() { 550.78125, 269.53125, 257.8125 };
-            List<double> r1Frequencies = new List<double>() { 503.90625, 164.0625, 667.96875 };
-            List<double> r2Frequencies = new List<double>() { 609.375, 23367.1875, 23894.53125, 398.4375, 632.8125, 105.46875};
-            List<double> r3Frequencies = new List<double>() { 246.09375, 421.875, 23519.53125, 468.75, 480.46875 };
+            List<double> l1Frequencies = new List<double>() { 140.625, 152.34357, 292.96875, 304.6875, 23707.0312 };
+            List<double> l2Frequencies = new List<double>() { 363.28125, 714.84375, 23296.875 };
+            List<double> l3Frequencies = new List<double>() { 445.3125, 785.15625, 23214.84375 };
+            List<double> mFrequencies = new List<double>() { 257.8125, 269.53125, 550.78125 };
+            List<double> r1Frequencies = new List<double>() { 164.0625, 503.90625, 667.9685 };
+            List<double> r2Frequencies = new List<double>() { 632.8125, 23367.1875, 23894.53125 };
+            List<double> r3Frequencies = new List<double>() { 234.375, 421.875, 468.75, 23519.53125 };
 
             // if no possible oracle has been identified look for all possible matches
             if (possibleOracle == Oracle.NaO)
@@ -189,31 +191,31 @@ namespace d2OracleDecoder
                 switch (possibleOracle)
                 { 
                     case Oracle.L1:
-                        if (l1Frequencies.Contains(frequency)) return possibleOracle;
+                        if (l1Frequencies.Contains(frequency) || frequency == 82.03125) return possibleOracle;
                         else return Oracle.NaO;
 
                     case Oracle.L2:
-                        if (l1Frequencies.Contains(frequency)) return possibleOracle;
+                        if (l1Frequencies.Contains(frequency) || frequency == 93.75) return possibleOracle;
                         else return Oracle.NaO;
 
                     case Oracle.L3:
-                        if (l1Frequencies.Contains(frequency)) return possibleOracle;
+                        if (l1Frequencies.Contains(frequency) || frequency == 433.59375) return possibleOracle;
                         else return Oracle.NaO;
 
                     case Oracle.M:
-                        if (l1Frequencies.Contains(frequency)) return possibleOracle;
+                        if (l1Frequencies.Contains(frequency) || frequency == 70.3125) return possibleOracle;
                         else return Oracle.NaO;
 
                     case Oracle.R1:
-                        if (l1Frequencies.Contains(frequency)) return possibleOracle;
+                        if (l1Frequencies.Contains(frequency) || frequency == 328.125) return possibleOracle;
                         else return Oracle.NaO;
 
                     case Oracle.R2:
-                        if (l1Frequencies.Contains(frequency)) return possibleOracle;
+                        if (l1Frequencies.Contains(frequency) || frequency == 386.71875) return possibleOracle;
                         else return Oracle.NaO;
 
                     case Oracle.R3:
-                        if (l1Frequencies.Contains(frequency)) return possibleOracle;
+                        if (l1Frequencies.Contains(frequency) || frequency == 480.46875) return possibleOracle;
                         else return Oracle.NaO;
                 }
                     

@@ -26,19 +26,13 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAABAAAAAAAAAAAAAmwIAAAAA1AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAADwv90AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T15:43:21.731Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 152,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -47,7 +41,7 @@
               "RelativeDocumentMoniker": "oracle-frequencies.txt",
               "ToolTip": "C:\\Users\\Mark\\Documents\\d2-oracle-decoder\\oracle-frequencies.txt",
               "RelativeToolTip": "oracle-frequencies.txt",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAAABQBAABcAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAQwIMAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2025-06-18T17:48:02.678Z",
               "EditorCaption": ""
